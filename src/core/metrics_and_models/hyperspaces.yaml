@@ -1,0 +1,137 @@
+SVM:
+    - Categorical: 
+        name: kernel
+        categories:
+        - rbf
+    - Real: 
+        name: C 
+        low: 0.01 
+        high: 100 
+        prior: log-uniform
+    - Real: 
+        low: 1.0 
+        high: 5.0 
+        prior: log-uniform
+    - Real: 
+        name: gamma 
+        low: 00.01
+        high: 100
+        prior: log-uniform
+    - Integer: 
+        name: min_samples_split 
+        low: 2 
+        high: 100
+
+BDT:
+    - Categorical:
+        name: criterion
+        categories:
+        - gini
+        - entropy
+    - Integer:
+        name: max_depth
+        low: 1
+        high: 50
+    - Integer:
+        name: min_samples_split
+        low: 1
+        high: 50
+    - Integer:
+        name: min_samples_leaf
+        low: 1
+        high: 50
+    - Real:
+        name: max_features
+        low: 0.1
+        high: 1.0
+    - Integer:
+        name: max_leaf_nodes
+        low: 2
+        high: 50
+    - Real:
+        name: min_impurity_decrease
+        low: 0.0
+        high: 0.5
+
+BDF:
+    - Integer:
+        name: n_estimators
+        low: 50
+        high: 200
+    - Integer:
+        name: max_depth
+        low: 5
+        high: 20
+    - Integer:
+        name: min_samples_split
+        low: 2
+        high: 10
+    - Integer:
+        name: min_samples_leaf
+        low: 1
+        high: 10
+    - Real:
+        name: max_features
+        low: 0.1
+        high: 1.0
+
+GBC:
+    - Integer:
+        name: n_estimators
+        low: 50
+        high: 200
+    - Real:
+        name: learning_rate
+        low: 0.05
+        high: 0.2
+
+LRC:
+    - Real:
+        name: C
+        low: 0.01
+        high: 10
+    - Categorical:
+        name: penalty
+        categories:
+        - l1
+        - l2
+    - Categorical:
+        name: solver
+        categories:
+        - liblinear
+        - lbfgs
+        - saga
+
+XGB:
+    - Categorical:
+        name: objective
+        categories:
+        - binary:logistic
+    - Categorical:
+        name: use_label_encoder
+        categories:
+        - False
+    - Categorical:
+        name: eval_metric
+        categories:
+        - logloss
+    - Real:
+        name: learning_rate
+        low: 0.01
+        high: 0.3
+    - Integer:
+        name: n_estimators
+        low: 50
+        high: 200
+    - Integer:
+        name: max_depth
+        low: 3
+        high: 10
+    - Real:
+        name: subsample
+        low: 0.5
+        high: 01.0
+    - Real:
+        name: colsample_bytree
+        low: 0.5
+        high: 1.0

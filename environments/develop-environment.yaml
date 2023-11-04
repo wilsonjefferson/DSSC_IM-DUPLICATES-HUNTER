@@ -1,0 +1,52 @@
+name: py38
+channels:
+  - https://artifactory.sofa.dev/artifactory/conda-forge/
+dependencies:
+  - pip=22.2.2
+  - pandas=1.4.4
+  - openpyxl=3.0.10
+  - dataclasses # =0.8
+  - tqdm # =4.64.1
+  - scikit-learn=1.1.2
+  - scikit-optimize=0.9.0
+  - numpy=1.23.2
+  - pyodbc=4.0.34
+  - networkx=2.8.6
+  - matplotlib=3.5.3
+  - spacy=3.4.0 # spacy must be version 3.4 for compatibility reason for the en_core_web_lg package
+  - gensim=4.2.0
+  - levenshtein=0.20.3
+  - wordcloud=1.8.2.2
+  - mlxtend=0.20.0
+  # - typing-extensions=4.3.0
+  # - typing_extensions=4.3.0
+  # - backports.functools_lru_cache=1.6.4
+  - scipy=1.9.1
+  - joblib # =1.1.0
+  - pyaml # =21.10.1
+  - yaml # =0.2.5
+
+  - pip:
+
+    # to install pip libraries run:
+    # pip install --index-url https://artifactory.sofa.dev/artifactory/api/pypi/pypi-remote/simple xlrd regex==2022.8.17 nltk==3.7 huggingface-hub==0.9.1 sentence-transformers==2.2.2 transformers==4.21.3 recordclass==0.18.4 pyspnego==0.9.0
+
+    - xlsxwriter
+    - xlrd
+    - regex==2022.8.17
+    - nltk==3.7
+    - huggingface-hub==0.9.1
+    - sentence-transformers==2.2.2
+    - transformers==4.21.3
+    - recordclass==0.18.4
+    - pyspnego==0.9.0
+    - ecb-connectors==3.16.7
+    - wordcloud
+
+    # to install ecb-connectors run: pip3 install ecb-connectors --index-urlhttps://artifactory.sofa.dev/artifactory/api/pypi/pypi-remote/simple --extra-index-urlhttps://artifactory.sofa.dev/artifactory/api/pypi/pypi-local/simple
+    # visit https://gitlab.sofa.dev/vl-mlops/virtual-lab-ml-devops-templates/-/tree/master/Setup/DiscConnectionSetupfor more information
+
+
+# import pickle
+# from email.message import Message
+# from difflib import SequenceMatcher

@@ -1,0 +1,19 @@
+GLOBAL:
+  backup_root: /home/azureuser/localfiles/
+  last_incident_time: none
+  package_root: /home/azureuser/cloudfiles/code/Users/%s/package_data/
+  project_root: none
+MAIN_BUILD:
+  backup_location: backup_%s/catalog_building/
+  build_catalog: true
+  make_plots: false
+  n_chunks: 15
+MAIN_DEPLOY:
+  backup_location: backup_%s/model_deployment/
+  build_catalog: false
+  destination: duplicates.xlsx
+  make_plots: true
+MAIN_TRAIN:
+  backup_location: backup_%s/model_training/
+  make_plots: true
+  n_chunks: 15
