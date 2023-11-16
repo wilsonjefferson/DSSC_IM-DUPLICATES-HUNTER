@@ -153,7 +153,7 @@ def compute_metrics(df:pd.DataFrame, destination:str = None, custom_name_png:str
         "GLOVE": ft.partial(metrics.pre_trained_average_word_embeddings_similarity, measure_name='GLOVE', ticket_config='tokens_no_stop', model=glove2vec),
         # "DOC2VEC": ft.partial(metrics.doc2vec_similarity, measure_name='DOC2VEC',ticket_config='tokens_no_stop', model=doc2vec),
         "W2VEC": ft.partial(metrics.pre_trained_average_word_embeddings_similarity, measure_name='W2VEC', ticket_config='tokens_no_stop', model=word2vec),
-        "WO": ft.partial(metrics.wo_similarity, measure_name='WO', ticket_config='n_grams_no_stop'),
+        "WO": ft.partial(metrics.jaccard_similarity, measure_name='WO', ticket_config='n_grams_no_stop'),
         "JW": ft.partial(metrics.jw_similarity, measure_name='JW', ticket_config='lemma'),
         "BST": ft.partial(metrics.bst_similarity, measure_name='BST', ticket_config='tokens_no_stop', model=bert), # comment it for SOFT_0_duplicates_model
         "FASTTEXT": ft.partial(metrics.fasttext_similarity, measure_name='FASTTEXT', ticket_config='tokens_no_stop', model=fasttext)
