@@ -304,32 +304,6 @@ def jw_similarity(tokens1:list, tokens2:list) -> float:
     return lev.jaro_winkler(tokens1, tokens2) # it may require strings instead of tokens
 
 @metric_decorator
-def wo_similarity(tokens1:list, tokens2:list) -> float:
-    '''
-        The purpose of this method is to compute the Word Order Similarity 
-        score between a pair of sentences.
-
-        Parameters
-        ----------      
-        tokens1: list
-            Sentence/text list from ticket
-
-        tokens2: list
-            Sentence/text list from ticket
-
-        Returns
-        -------
-            float
-                Word Order Similarity score
-    '''
-
-    tokens1 = set(tokens1)
-    tokens2 = set(tokens2)
-    if len(tokens1.union(tokens2)) == 0:
-        return 0
-    return len(tokens1.intersection(tokens2)) /len(tokens1.union(tokens2))
-
-@metric_decorator
 def bst_similarity(tokens1:list, tokens2:list, model) -> float: 
     '''
         The purpose of this method is to compute the Bert SentenceTransformer 
