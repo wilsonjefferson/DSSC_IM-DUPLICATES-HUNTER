@@ -97,7 +97,7 @@ def construct_duplicates_dict(df:pd.DataFrame) -> tuple:
 def text_preprocessing(df:pd.DataFrame, dict_stars_filtered:Dict[str, str]) -> tuple:
     '''
         Compute text preprocessing and filter dict_stars_filtered from
-        no valid pairs. Then, initialize DatasetBuilder.
+        no valid pairs.
 
         Parameters
         ----------
@@ -127,6 +127,8 @@ def text_preprocessing(df:pd.DataFrame, dict_stars_filtered:Dict[str, str]) -> t
     df, _ = define_sentences(df, ['text_cleaned'])
     log.debug(df.head())
 
+    # remove incidents from dict_stars_filtered no longer valid
+    # after text-preprocessing routine
     list_no_valid_recognized_tickets = []
     ids = df.incidentid.tolist()
     for duplicate, origin in dict_stars_filtered.items():
