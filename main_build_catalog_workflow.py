@@ -37,7 +37,11 @@ if __name__ == '__main__':
         dict_model = pickle.load(f)
     
     catalog, _, _ = assess_on_new_tickets(dict_model, df_two_weeks, catalog, _)
-    
+
+    # this step is "useless" in this phase of the project because
+    # the catalog is just now created, so no need to update it,
+    # what is doing this function, at this stage, is just to provide
+    # a dataframe shape to the catalog.
     df_catalog = update_catalog(catalog, df_two_weeks)
 
     # STORE CATALOG (I.E. DICTIONARY OF ORIGINS AND STARS)
