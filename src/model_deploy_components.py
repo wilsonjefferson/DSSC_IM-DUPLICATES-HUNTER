@@ -359,6 +359,10 @@ def assess_on_new_tickets(dict_model:dict, df:pd.DataFrame, dict_stars:Dict[str,
     if not build_catalog:
         df_tmp = pd.concat([df, df_2_weeks_origins])
         start = 0
+        # setting df_tmp as concatenation between df and 2-weeks dataset is made on porpouse
+        # in order, later on in the "construct dataset" part, to make use of the 
+        # DatasetBuilder.build_data() function. This function needs to have all the
+        # information inside the self.df dataframe which, in this case, is df_tmp.
     else:
         df_tmp = df
         start = 2
@@ -372,6 +376,10 @@ def assess_on_new_tickets(dict_model:dict, df:pd.DataFrame, dict_stars:Dict[str,
     
     prediction_proba_matrix = list()
     for idx in tqdm(range(start, len(df)), desc=desc, leave=False):
+        # setting the upperboud for the range of this for loop as len(df)
+        # ensure that, in production, to use and evaluate just the new incidets
+        # In fact, setting len(df_tmp) means to check also the already identified
+        # origins, that is wrong, since df_tmp = df + df_2_weeks_origins.
 
         new_ticket = df.iat[idx-1, 0] if build_catalog else df.iat[idx, 0]
         logging.info('Next new ticket: %s'%new_ticket)
