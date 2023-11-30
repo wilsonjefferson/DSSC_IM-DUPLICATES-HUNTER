@@ -261,6 +261,15 @@ def search_recognized_duplicates(df:pd.DataFrame) -> tuple:
                     In general, duplicate_ticket should has a value the code of 
                     the origin ticket, and an origin ticket should has as value 
                     the code of the another ticket or a graph (where it is the origin).
+
+                    Warning: It is important to notice that, even if the dataframe of incidents
+                    is ordered from oldest to newest incident, the order does not guarantee to 
+                    find duplicate tickets "easily" associated to an existing star. This because
+                    it was observed that agents, dealing with incident tickets, are not always 
+                    able to immediatelly spot that a certain ticket is duplicate of an already
+                    existing "chain". Therefore, it may happen that agents implicitly build a star which,
+                    at the end, it is discovered being part of another oldest star, this because they found out
+                    that the origin of a star is actually duplicate of another node of an already existing star.
                 '''
                 # H is the graph of the "origin" duplicate_ticket or duplicate_ticket 
                 # code if it is not present in duplicates_dict
