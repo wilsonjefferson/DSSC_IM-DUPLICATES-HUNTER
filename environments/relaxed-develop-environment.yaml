@@ -1,0 +1,51 @@
+name: py38
+channels:
+  - https://artifactory.sofa.dev/artifactory/conda-forge/
+dependencies:
+  - pip=22.2.2
+  - pandas
+  - openpyxl
+  - dataclasses
+  - tqdm
+  - scikit-learn
+  - scikit-optimize
+  - numpy
+  - pyodbc
+  - networkx
+  - matplotlib
+  - spacy=3.4.0 # spacy must be version 3.4 for compatibility reason for the en_core_web_lg package
+  - gensim
+  - levenshtein
+  - wordcloud
+  - mlxtend
+  # - typing-extensions
+  # - typing_extensions
+  # - backports.functools_lru_cache
+  - scipy
+  - joblib
+  - pyaml
+  - yaml
+
+  - pip:
+
+    # to install pip libraries run:
+    # pip install --index-url https://artifactory.sofa.dev/artifactory/api/pypi/pypi-remote/simple xlrd regex nltk huggingface-hub sentence-transformers transformers recordclass pyspnego
+
+    - xlsxwriter
+    - xlrd
+    - regex
+    - nltk
+    - huggingface-hub
+    - sentence-transformers
+    - transformers
+    - recordclass
+    - pyspnego
+    - ecb-connectors
+    - wordcloud
+
+    # to install ecb-connectors run: pip3 install ecb-connectors --index-urlhttps://artifactory.sofa.dev/artifactory/api/pypi/pypi-remote/simple --extra-index-urlhttps://artifactory.sofa.dev/artifactory/api/pypi/pypi-local/simple
+
+
+# import pickle
+# from email.message import Message
+# from difflib import SequenceMatcher
